@@ -2,7 +2,7 @@ import { Avatar } from '@material-ui/core';
 import React, { useState, useEffect } from 'react'
 import './SidebarChat.css';
 
-function SidebarChat( { addNewChat }) {
+function SidebarChat({ addNewChat }) {
     const [seed, setSeed] = useState(''); 
 
     useEffect(() => {
@@ -10,7 +10,11 @@ function SidebarChat( { addNewChat }) {
     }, [])
 
     const createChat = () = {
+        const roomName = prompt("Please enter name for chat");
 
+        if (roomName) {
+            
+        }
     };
 
     return !addNewChat ? (
