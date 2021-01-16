@@ -5,23 +5,23 @@ import ChatIcon from "@material-ui/icons/Chat";
 import MoreVertIcon from "@material-ui/icons/MoreVert";
 import { SearchOutlined } from "@material-ui/icons";
 import SidebarChat from "./SidebarChat";
-import db from '../firebase';
+import db from "../firebase";
 
 import "./Sidebar.css";
 
 function Sidebar() {
-
   const [rooms, setRooms] = useState([]);
 
   useEffect(() => {
-    db.collection('rooms').onSnapshot(snapshot) => 
+    db.collection("rooms").onSnapshot((snapshot) =>
       setRooms(
         snapshot.docs.map((doc) => ({
-        id: doc.id,
-        data: doc.data(),
-      }))
+          id: doc.id,
+          data: doc.data(),
+        }))
       )
-  }, [])
+    );
+  }, []);
 
   return (
     <div className="sidebar">
@@ -48,9 +48,10 @@ function Sidebar() {
       </div>
 
       <div className="sidebar__chat">
-          <SidebarChat addNewChat/>
-          <SidebarChat />
-          <SidebarChat />
+        <SidebarChat addNewChat />
+        {rooms.map((room) => {
+          <SidebarChat key={room.id} id={room.id} name={room.data.name} />;
+        })}
       </div>
     </div>
   );
