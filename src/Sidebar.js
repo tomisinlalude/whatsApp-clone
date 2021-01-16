@@ -11,7 +11,7 @@ function Sidebar() {
         <div className="sidebar">
             <div className="sidebar__header">
                 <Avatar />
-                <div class="sidebar__headerRight">
+                <div className="sidebar__headerRight">
                     <DonutLargeIcon />
                     <ChatIcon />
                     <MoreVertIcon />
