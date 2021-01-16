@@ -23,6 +23,7 @@
 
 .sidebar__searchContainer > .MuiSvgIcon-root {
     color: gray;
+    padding: 10px;
 }
 
 .sidebar__searchContainer > input {
