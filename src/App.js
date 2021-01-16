@@ -1,7 +1,7 @@
 import "./App.css";
 import Sidebar from "./components/Sidebar";
 import Chat from "./components/Chat";
-import { BrowserRouter as Router, Switch, Route } from 'react-dom';
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 
 function App() {
   return (
@@ -9,14 +9,12 @@ function App() {
     <div className="app">
       <div className="app__body">
         <Router>
+          <Sidebar />
           <Switch>
-            <Route path="/app">
-              <Sidebar />
+            <Route path="/rooms/:roomId">
               <Chat />
             </Route>
-            <Route path="/">
-              <h1>Home Screen</h1>
-            </Route>
+            <Route path="/">{/* <h1>Home Screen</h1> */}</Route>
           </Switch>
         </Router>
       </div>
