@@ -20,7 +20,7 @@ function Chat() {
           <h3>Room name</h3>
           <p>Last seen at...</p>
         </div>
-        <div className="sidebar__headerRight">
+        <div className="chat__headerRight">
           <IconButton>
             <SearchOutlined />
           </IconButton>
