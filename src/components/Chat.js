@@ -32,7 +32,12 @@ function Chat() {
           </IconButton>
         </div>
       </div>
-      <div className="chat__body"></div>
+      <div className="chat__body">
+        <div class="chat__message">
+          <span className="chat__name">Tomisin Lalude</span>
+          Hey guys
+        </div>
+      </div>
       <div className="chat__footer"></div>
     </div>
   );
