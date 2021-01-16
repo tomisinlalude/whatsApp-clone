@@ -35,11 +35,16 @@
     width: fit-content;
 }
 
+.chat__timestamp {
+    margin-left: 10px;
+    font-size: xx-small;
+}
+
 .chat__name {
     position: absolute;
-    top: 0;
+    top: -15px;
     font-weight: 800;
-    font-size: xx-small;
+    font-size: x-small;
 }
 
 .chat__headerRight {
