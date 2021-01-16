@@ -3,7 +3,7 @@ import './SidebarChat.css';
 
 function SidebarChat() {
     return (
-        <div className="sidebar__chat">
+        <div className="sidebarChat">
             
         </div>
     )
