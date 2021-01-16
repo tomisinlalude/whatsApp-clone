@@ -3,6 +3,7 @@ import "./App.css";
 import Sidebar from "./components/Sidebar";
 import Chat from "./components/Chat";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import Login from "./components/Login";
 
 function App() {
   const [user, setUser] = useState(null);
@@ -10,7 +11,7 @@ function App() {
     //BEM naming convention
     <div className="app">
       {!user ? (
-        <h1>LOGIN</h1>
+        <Login />
       ) : (
         <div className="app__body">
           <Router>
