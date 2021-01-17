@@ -22,7 +22,7 @@ function SidebarChat({ id, name, addNewChat }) {
           );
         });
     }
-  }, []);
+  }, [id]);
 
   useEffect(() => {
     setSeed(Math.floor(Math.random() * 5000));
