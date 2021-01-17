@@ -69,7 +69,7 @@ function Chat() {
             <p>
               Last seen{" "}
               {new Date(
-                messages[messages.length - 1]?.timestamp.toDate()
+                messages[messages.length - 1]?.timestamp?.toDate()
               ).toUTCString()}
             </p>
           )}
