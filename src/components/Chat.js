@@ -7,6 +7,8 @@ import "./Chat.css";
 import { InsertEmoticon, Mic } from "@material-ui/icons";
 import { useParams } from "react-router-dom";
 import db from "../firebase";
+import firebase from '../firebase';
+import { useStateValue } from '../StateProvider';
 
 function Chat() {
   const [seed, setSeed] = useState("");
@@ -14,6 +16,7 @@ function Chat() {
   const { roomId } = useParams();
   const [roomName, setRoomName] = useState("");
   const [messages, setMessages] = useState([]);
+  const [{ user }, dispatch] = useStateValue();
 
   useEffect(() => {
     if (roomId) {
@@ -30,7 +33,7 @@ function Chat() {
         .onSnapshot((snapshot) => {
           setMessages(
             snapshot.docs.map((doc) => {
-              return doc.data()
+              return doc.data();
             })
           );
         });
@@ -44,6 +47,12 @@ function Chat() {
   const sendMessage = (e) => {
     e.preventDefault();
     console.log("You typed >>>", input);
+
+    db.collection("rooms").doc(roomId).collection("messages").add({
+        message: input,
+        name: user.displayName,
+        timestamp: firebase.firestore.fieldValue.serverTimeStamp()
+    })
     setInput("");
   };
 
