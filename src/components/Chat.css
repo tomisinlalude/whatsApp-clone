@@ -33,11 +33,13 @@
     background-color: #ffffff;
     border-radius: 10px;
     width: fit-content;
+    margin-top: 30px;
 }
 
 .chat__receiver {
     margin-left: auto;
     background-color: #dcf8c6;
+    margin-top: 30px;
 }
 
 .chat__timestamp {
