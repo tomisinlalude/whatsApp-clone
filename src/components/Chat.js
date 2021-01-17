@@ -7,7 +7,7 @@ import "./Chat.css";
 import { InsertEmoticon, Mic } from "@material-ui/icons";
 import { useParams } from "react-router-dom";
 import db from "../firebase";
-import firebase from '../firebase';
+import firebase from 'firebase';
 import { useStateValue } from '../StateProvider';
 
 function Chat() {
@@ -51,7 +51,7 @@ function Chat() {
     db.collection("rooms").doc(roomId).collection("messages").add({
         message: input,
         name: user.displayName,
-        timestamp: firebase.firestore.fieldValue.serverTimeStamp()
+        timestamp: firebase.firestore.FieldValue.serverTimestamp()
     })
     setInput("");
   };
@@ -78,7 +78,7 @@ function Chat() {
       </div>
       <div className="chat__body">
         {messages.map((message) => (
-          <p className={`chat__message ${true && "chat__receiver"}`}>
+          <p className={`chat__message ${message.name === user.displayName && "chat__receiver"}`}>
             <span className="chat__name">{message.name}</span>
             {message.message}
             <span className="chat__timestamp">
