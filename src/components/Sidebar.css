@@ -1,7 +1,6 @@
 .sidebar {
   display: flex;
   flex-direction: column;
-  flex: 0.35;
 }
 
 .sidebar__search {
@@ -59,7 +58,13 @@
 @media only screen and (max-width: 768px) {
   /* For mobile phones: */
   .sidebar {
-    flex: 1 !important;
-    width: fit-content;
+    flex: 1;
+  }
+}
+
+@media only screen and (min-width: 768px) {
+  /* Forwider screens */
+  .sidebar {
+    flex: 0.35;
   }
 }
