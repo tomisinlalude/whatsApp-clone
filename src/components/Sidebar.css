@@ -55,3 +55,10 @@
     overflow: scroll;
     background-color: white;
 }
+
+@media only screen and (max-width: 768px) {
+    /* For mobile phones: */
+    .sidebar {
+      flex: 1;
+    }
+  }
