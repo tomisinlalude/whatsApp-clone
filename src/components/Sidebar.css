@@ -59,6 +59,6 @@
 @media only screen and (max-width: 768px) {
   /* For mobile phones: */
   .sidebar {
-    flex: 1;
+    flex: 1 !important;
   }
 }
