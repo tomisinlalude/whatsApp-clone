@@ -100,5 +100,6 @@
   /* For mobile phones: */
   .chat {
     flex: 1 !important;
+    width: fit-content;
   }
 }

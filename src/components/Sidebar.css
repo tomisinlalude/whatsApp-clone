@@ -60,5 +60,6 @@
   /* For mobile phones: */
   .sidebar {
     flex: 1 !important;
+    width: fit-content;
   }
 }
